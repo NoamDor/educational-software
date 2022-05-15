@@ -1,0 +1,249 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+div#myDropdown {
+    width: 0;
+    right: 210px;
+    top: 99px;
+    background-color: white;
+    width: 180px
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+a.dropbtn {
+    padding-left: 0px;
+    padding-bottom: 0px;
+}
+
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+    border-style: solid;
+}
+
+.php {
+    width: 60%; background-color: #2b6777;    border-radius: 10px;
+
+}
+
+.watched {
+    border-style: solid;
+    padding: 0px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.bar{
+    grid-area:bar ;
+    margin-left: 5%;
+}
+
+.towatch{
+    grid-area: towatch;
+        border-style: solid;
+    text-align: right;
+        border-radius: 10px;
+padding-right: 5%;
+
+}
+
+.watchnow{
+    grid-area: watchnow;
+    margin-left: 5.5%;
+        border-style: solid;
+        border-radius: 10px;
+}
+
+@media (min-width: 1200px) {
+    .mobile-container{
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .topnav{
+        display: none;
+    }
+ .mobile-container {
+  margin: 30px;
+
+  color: black;
+   width: 130px;
+     text-align: center;
+  border-radius: 10px;
+    position: fixed;
+     left: 71%;
+      display: inline;
+}
+
+.phonenav {
+  overflow: hidden;
+  position: relative;
+}
+
+.phonenav #myLinks {
+  display: none;
+    background: white;
+}
+
+.phonenav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  /* display: block; */
+     color: black;
+}
+
+.phonenav a.icon {
+  /* display: block; */
+  right: 0;
+  top: 0;
+}
+
+.phonenav a:hover {
+  background-color: #c8d8e4;
+}
+
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.profile-card{
+  position: absolute;
+  /* display: none; */
+}
+
+
+figure.snip0045 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 380px;
+  max-width: 480px;
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+}
+figure.snip0045 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+figure.snip0045 > img {
+  width: 45%;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  position: relative;
+  left: -24%;
+  z-index: 1;
+}
+figure.snip0045 figcaption {
+  padding: 20px 30px 20px 20px;
+  position: absolute;
+  right: 0;
+  width: 50%;
+}
+figure.snip0045 figcaption h2,
+figure.snip0045 figcaption p {
+  margin: 0;
+  text-align: right;
+  padding: 10px 0;
+  width: 100%;
+}
+figure.snip0045 figcaption h2 {
+  font-size: 1.3em;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+figure.snip0045 figcaption h2 span {
+  font-weight: 800;
+}
+figure.snip0045 figcaption p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+figure.snip0045 figcaption .icons {
+  width: 100%;
+  text-align: right;
+}
+figure.snip0045 figcaption .icons i {
+  font-size: 26px;
+  padding: 5px;
+  top: 50%;
+  color: #000000;
+}
+figure.snip0045 figcaption a {
+  opacity: 0.3;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip0045 figcaption a:hover {
+  opacity: 0.8;
+}
+figure.snip0045 .position {
+  width: 100%;
+  text-align: right;
+  padding: 15px 30px;
+  font-size: 0.9em;
+  opacity: 1;
+  font-style: italic;
+  color: #ffffff;
+  background: #000000;
+}
+figure.snip0045.blue .position {
+  background: #20638f;
+}
+figure.snip0045.red .position {
+  background: #962d22;
+}
+figure.snip0045.yellow .position {
+  background: #bf6516;
+}
+figure.snip0045.green .position {
+  background: #1e8449;
+}
+figure.snip0045:hover > img,
+figure.snip0045.hover > img {
+  left: -19%;
+}
+
+.close-profile{
+    text-align: left; 
+    margin-top: 5px; 
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.close-profile:hover{
+    color: gray;
+}
+
+.undisplay-card{
+        position: absolute;
+        left: -9999px;
+        display: none;
+        visibility: hidden;
+        background-color: #1e8449;
+}

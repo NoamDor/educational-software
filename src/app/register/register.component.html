@@ -1,15 +1,47 @@
 <div class = "form_registered">
-    <form method="post" action="/TODO">
+    <form style="display: rtl;">
       <div class="container">
         <h1 style="text-align: center">טופס ההרשמה לאתר</h1>
         <p style="text-align: center">אנא מלא טופס זה על מנת לבצע את הרישום</p>
         <hr>
+        
+        <label for="firstName" style="float: right;"><b>שם פרטי</b></label>
+        <input type="text" placeholder="הזן שם פרטי" name="firstName" id="firstName" required [(ngModel)]="firstName" #firstNameEl (input)="isFirstName()">
+        <div style="float: right; color: red;" *ngIf="!firstNameValid">
+          עלייך להזין שם פרטי
+        </div><br><br><br>
+        
+        
+        <label for="lastName" style="float: right;"><b>שם משפחה</b></label>
+        <input type="text" placeholder="הזן שם משפחה" name="lastName" id="lastName" required [(ngModel)]="lastName" #lastNameEl (input)="isLastNameValid()">
+        <div style="float: right; color: red;" *ngIf="!lastNameValid">
+          עלייך להזין שם משפחה
+        </div><br><br><br>
 
-        <label for="email_registered"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="email" id="email_registered" required >
 
-        <label for="psw"><b>Password (8-10 using only english letters) </b></label>
-        <input type="password" placeholder="Enter Password" name="psw" id="psw" pattern="[A-Za-z]{8,10}" required>
+        <label for="email" style="float: right;"><b>כתובת מייל</b></label>
+        <input type="email" placeholder="הזן כתובת מייל" name="email" id="email" required [(ngModel)]="email" #emailEl (input)="isEmailName()">
+        <div style="float: right; color: red;" *ngIf="!emailValid">
+          עלייך להזין כתובת מייל
+        </div><br><br><br>
+
+        <label for="password" style="float: right;"><b>הזן סיסמה</b></label>
+        <input type="password" placeholder="הזן סיסמה" name="password" id="password" pattern="[A-Za-z]{8,10}" required [(ngModel)]="password" #passwordEl (input)="isPasswordValid()">
+        <div style="float: right; color: red;" *ngIf="!passwordValid">
+          עלייך להזין סיסמה
+        </div><br><br><br>
+
+        <label for="birthDate" style="float: right;"><b>תאריך לידה</b></label><br><br>
+        <input type="date" name="birthDate" id="birthDate" required [(ngModel)]="birthDate" style="float: right;" #bdEl (input)="isBirthDateValid()"><br><br>
+        <div style="float: right; color: red;" *ngIf="!birthDateValid">
+          עלייך להזין תאריך לידה
+        </div><br><br><br>
+
+        <label for="role" style="float: right;"><b>תפקיד</b></label>
+        <input type="text" placeholder="הזן תפקיד" name="role" id="role" required [(ngModel)]="role" #roleEl (input)="isRoleValid()">
+        <div style="float: right; color: red;" *ngIf="!roleValid">
+          עלייך להזין תפקיד
+        </div><br><br><br>
 
         <hr>
           <div class="terms">
@@ -75,11 +107,13 @@
                 האמור לעיל נמצא תחת סמכות השיפוט הבלעדי של החוק הישראלי תוך שימוש במערכת
                 בתי המשפט הישראליים בלבד במחוז תל אביב
             </div>
-        <p><input type="checkbox" id="check" name="check" required> על ידי סימון וי בתיבה שמשאל את/ה מאשר את התקנון <a href="usage-terms-example-pdf.pdf" download style="font-size: 15px">תנאים ופרטיות</a>.</p>
-        <button type="submit" class="registerbtn" >הרשם כאן ועכשיו</button>
+            <div style="direction: rtl;">
+              <p><input type="checkbox" id="check" name="check"  style="direction: rtl;" required> על ידי סימון וי בתיבה שמשאל את/ה מאשר את התקנון <a href="usage-terms-example-pdf.pdf" download style="font-size: 15px">תנאים ופרטיות</a> </p>
+            </div>
+        <button type="submit" class="registerbtn" (click)="send()">הרשם כאן ועכשיו</button>
     </div>
     <div class="container signin">
-      <p>יש לך כבר חשבון ?<a href="signin.html">הכנס כאן</a>
+      <p>יש לך כבר חשבון ?<a href="/login">הכנס כאן</a>
     </div>
     <div><p></p></div>
   </form>

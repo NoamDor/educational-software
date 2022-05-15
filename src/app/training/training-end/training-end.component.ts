@@ -8,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class TrainingEndComponent implements OnInit {
 
   constructor() { }
+  effect = 5;
+  satisfaction = 5;
+  
 
   ngOnInit(): void {
   }
 
+  valueEffectChanged(val){
+    this.effect = val;
+  }
+
+  valueSatisfactionChanged(val){
+    this.satisfaction = val;
+  }
 }

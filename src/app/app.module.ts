@@ -16,6 +16,12 @@ import { TrainingTheoryComponent } from './training/training-theory/training-the
 import { ClosedQuestionComponent } from './training/closed-question/closed-question.component';
 import { OpenQuestionComponent } from './training/open-question/open-question.component';
 import { TrainingEndComponent } from './training/training-end/training-end.component';
+import { LoginComponent } from './login/login.component';
+import { ClosedQuestionSecComponent } from './training/closed-question-sec/closed-question-sec.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { VideoComponent } from './training/video/video.component';
+import { SummaryComponent } from './training/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +38,17 @@ import { TrainingEndComponent } from './training/training-end/training-end.compo
     TrainingTheoryComponent,
     ClosedQuestionComponent,
     OpenQuestionComponent,
-    TrainingEndComponent
+    TrainingEndComponent,
+    LoginComponent,
+    ClosedQuestionSecComponent,
+    VideoComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

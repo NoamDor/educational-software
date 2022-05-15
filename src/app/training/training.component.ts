@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-training',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./training.component.css']
 })
 export class TrainingComponent implements OnInit {
+
   title = 'אנגולר- כלים לפיתוח נכון';
   state = [{
     name: 'training-start',
@@ -13,31 +15,49 @@ export class TrainingComponent implements OnInit {
   },{
     name: 'training-theory',
     nextButton: 'הבא'
+  },{
+    name: 'training-video',
+    nextButton: 'הבא'
   },
   {
     name: 'training-closed-question',
     nextButton: 'הבא'
   },
   {
+    name: 'training-closed-question-sec',
+    nextButton: 'הבא'
+  },{
+    name: 'training-summary',
+    nextButton: 'הבא'
+  },
+  {
     name: 'training-open-question',
     nextButton: 'סיים לומדה'
   },{
-    name: 'training-end'
+    name: 'training-end',
+    nextButton: 'שלח דירוג'
   }]
 
   stateIndex = 0;
   currentState = this.state[this.stateIndex];
+  width: any;
+  @ViewChild('bar') barel: ElementRef;
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    
-
   }
+
 
   changeState(x){
     this.stateIndex+=x;
+    this.width = (100 - (100/(this.state.length))*(this.stateIndex+1)).toString().concat('%')
+    this.barel.nativeElement.style['width'] = this.width;
     this.currentState = this.state[this.stateIndex];
+    if(this.stateIndex == this.state.length){
+     this.router.navigateByUrl('/home-page')
+    }
   }
 
 }

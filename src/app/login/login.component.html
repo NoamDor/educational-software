@@ -1,0 +1,19 @@
+<div class = "form_registered">
+    <form method="post" action="/TODO">
+      <div class="container">
+        <h1 style="text-align: center">התחברות</h1>
+        <hr>
+
+        <label for="email" style="float: right;"><b>כתובת מייל</b></label>
+        <input type="email" placeholder="הזן כתובת מייל" name="email" id="email" required [(ngModel)]="email">
+
+        <label for="password" style="float: right;"><b>סיסמה </b></label>
+        <input type="password" placeholder="הזן סיסמה" name="password" id="password" pattern="[A-Za-z]{8,10}" required [(ngModel)]="password">
+
+        <hr>
+        <button type="submit" class="registerbtn" (click)="getUser()" >התחבר</button>
+        <div #err id="err" style="display: none; text-align:center; color: red;">שם משתמש או סיסמה לא נכונים, אנא נסה שנית</div>
+    </div>
+    <div><p></p></div>
+  </form>
+</div>

@@ -1,1 +1,18 @@
-<p>training-end works!</p>
+<div class="form-control">
+    <div>
+        <h1>אנא הכנס חוות דעת על היחידה</h1>
+        <textarea placeholder="ענה כאן..."></textarea>
+    </div>
+    <div style="display: flex; flex-direction: row; width: 100%;">
+        <div style="width: 50%;">
+            <h3>דרג את אפקטיביות היחידה</h3>
+            <input type="range" id="effectiveness" name="effectiveness" min="0" max="10" value="5" (input)="valueEffectChanged($event.target.value)"> 
+            <h3>{{effect}}</h3>
+        </div>
+        <div style="position: relative;" style="width: 50%;">
+            <h3>דרג את שביעות רצונך מהיחידה</h3>
+            <input type="range" id="satisfaction" name="satisfaction" min="0" max="10" value="5" (input)="valueSatisfactionChanged($event.target.value)">
+            <h3>{{satisfaction}}</h3>
+        </div>
+    </div>
+</div>

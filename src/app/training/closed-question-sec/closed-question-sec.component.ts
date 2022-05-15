@@ -1,18 +1,19 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-closed-question',
-  templateUrl: './closed-question.component.html',
-  styleUrls: ['./closed-question.component.css']
+  selector: 'app-closed-question-sec',
+  templateUrl: './closed-question-sec.component.html',
+  styleUrls: ['./closed-question-sec.component.css']
 })
-export class ClosedQuestionComponent implements OnInit {
+export class ClosedQuestionSecComponent implements OnInit {
 
+  
   @ViewChild('1') check1: ElementRef;
   @ViewChild('2') check2: ElementRef;
   @ViewChild('3') check3: ElementRef;
   @ViewChild('4') check4: ElementRef;
   @ViewChild('tester') tester: ElementRef;
-  @ViewChild('explanationn') explanationn: ElementRef;
+  @ViewChild('explanation') explanation: ElementRef;
   exp = '';
   currentAns = undefined;
 
@@ -45,9 +46,9 @@ export class ClosedQuestionComponent implements OnInit {
 
   t(){
     this.tester.nativeElement.style.display='none'
-    this.explanationn.nativeElement.style.display = 'block'
-    this.explanationn.nativeElement.style['margin-top'] = '100px'
-    if(this.currentAns == 2){
+    this.explanation.nativeElement.style.display = 'block'
+    this.explanation.nativeElement.style['margin-top'] = '100px'
+    if(this.currentAns == 3){
       this.exp = 'צדקת! איזה אלוף בלה בלה בלה'
     } else{
       this.exp = 'טיפש!! תתקדם'

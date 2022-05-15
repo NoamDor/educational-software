@@ -1,26 +1,26 @@
 <form class="form-control exam">
     <div>
-        <h1>אילו מהשפות הבאות מוכרות לך?</h1>
-        <label class="container">C
+        <h1>מי בסטנדאפיסט הכי מצחיק?</h1>
+        <label class="container">אדיר מילר
         <input type="checkbox" checked="checked" #1 (click)="answer(1)">
         <span class="checkmark"></span>
         </label>
-        <label class="container">תשובה נכונה
+        <label class="container">אורי חזקיהו
         <input type="checkbox" #2 (click)="answer(2)">
         <span class="checkmark"></span>
         </label>
-        <label class="container">C#
+        <label class="container">תשובה נכונה
         <input type="checkbox" #3 (click)="answer(3)">
         <span class="checkmark"></span>
         </label>
-        <label class="container">Java
+        <label class="container">עדי אשכנזי
         <input type="checkbox" #4 (click)="answer(4)">
         <span class="checkmark"></span>
         </label>
     </div>
     <div>
         <div class="button button5" (click)="t()" #tester>בדוק</div>
-        <div id="explanationn" #explanationn>
+        <div id="explanation" #explanation>
             <h3>{{exp}}</h3>
         </div>
     </div>

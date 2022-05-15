@@ -1,16 +1,28 @@
 <div class="title">
    <h2 class="title-content">{{ title }}</h2> 
 </div>
-<div style="height: 385px; overflow-y: auto;">
+<div style="height: 378px; overflow-y: auto;">
     <app-training-start *ngIf="currentState.name == 'training-start'"></app-training-start>
     <app-training-theory *ngIf="currentState.name == 'training-theory'"></app-training-theory>
+    <app-video *ngIf="currentState.name == 'training-video'"></app-video>
     <app-closed-question *ngIf="currentState.name == 'training-closed-question'"></app-closed-question>
+    <app-closed-question-sec *ngIf="currentState.name == 'training-closed-question-sec'"></app-closed-question-sec>
     <app-open-question *ngIf="currentState.name == 'training-open-question'"></app-open-question>
+    <app-summary *ngIf="currentState.name == 'training-summary'"></app-summary>
     <app-training-end *ngIf="currentState.name == 'training-end'"></app-training-end>
 </div>
 
+<div style="width: 100%;display: flex; justify-content: center;">
+    <div style="width: 80%;">
+        <div style="background-color: #6D929B;">
+            <div class="w3-container w3-light-grey" #bar id="bar" style="height: 15px; width: 87.5%;"></div>
+          </div>
+    </div>
+</div>
+<br>
+
 <div style="display: flex; flex-direction: row;">
-    <div class="next-button" *ngIf="currentState.nextButton && stateIndex<state.length - 1" (click)="changeState(1)">
+    <div class="next-button" *ngIf="currentState.nextButton" (click)="changeState(1)">
         {{currentState.nextButton}}
     </div>
     <div class="next-button" *ngIf="stateIndex>=1 && currentState.nextButton" (click)="changeState(-1)">

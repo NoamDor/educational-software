@@ -1,31 +1,39 @@
 <nav>
     <div class="topnav">
         <a  routerLink="/home-page" routerLinkActive="active">עמוד הבית</a>
-               <a  class="dropbtn"><i class="arrow down"></i>קורסים </a>
-              <div id="myDropdown" class="dropdown-content">
-                <a href="course1.html">קורס מספר 1</a>
-                <a href="#about">קורס מספר 2</a>
-                <a href="#contact">קורס מספר 3</a>
-              </div>
         <a routerLink="/about" routerLinkActive="active">אודות האתר</a>
         <a routerLink="/q-and-a" routerLinkActive="active">Q&A</a>
-        <a class="active" routerLink="/contact" routerLinkActive="active">צור קשר</a>
+        <a routerLink="/contact" routerLinkActive="active">צור קשר</a>
          <a routerLink="/register" routerLinkActive="active">הרשמה</a>
+         <a routerLink="/login" routerLinkActive="active" *ngIf="!currentUser$">התחברות</a>
+         <a *ngIf="currentUser$" (click)="logout()">התנתקות</a>
     </div>
-    <a class="logo.a" href="home.html"><img class="logo" src="../../assets/images/logo.png" alt="LOGO" width="145" height="140" > </a>
-
-    <!-- <div class="mobile-container">
-        
-        <div class="phonenav">
-         <div id="myLinks">
-              <a  href="home.html">עמוד הבית</a>
-              <a href="course1.html">קורסים</a>
-              <a href="About%20us.html">אודות האתר</a>
-              <a href="Q&A.html">Q&A</a>
-              <a href="Contact.html">צור קשר</a>
-              <a href="Registered.html">הרשמה</a>
-         </div>
-              <a href="javascript:void(0);" class="icon" onclick="phoneFunctionnav()"><i class="fa fa-bars"></i></a>
+    <div style="display:flex; flex-direction: row;">
+        <a class="logo.a" href="home.html"><img class="logo" src="../../assets/images/logo.png" alt="LOGO" width="145" height="140" > </a>
+        <div style="margin-left: 30px; margin-top:30px; text-align: center;"  *ngIf="currentUser$ && currentUser$.firstName" (click)="openProfileCard()">
+            <h3> שלום  </h3>
+            <h3>{{currentUser$.firstName}}</h3>
         </div>
-    </div> -->
+        <div *ngIf="profile$" style="margin-left: -40px; margin-top:127px; text-align: center;">
+            <div  *ngIf="profile$" class="profile-card">
+                <figure class="snip0045 red">
+                    <div class="close-profile" (click)="closeProfileCard()">
+                        X
+                    </div>
+                    <figcaption>
+                        <h2> <span>{{currentUser$.firstName}}</span>{{currentUser$.lastName}}</h2>
+                        <p>{{currentUser$.email}}</p>
+                        <p>{{currentUser$.birthDate}}</p>
+                        <a>ערוך פרופיל אישי</a>
+                    </figcaption>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample7.jpg" alt="sample7"/>
+                    <div>
+                        <img src="../../assets/images/progress.PNG" alt="sample7" style="width: 80%;"/>	
+                    </div>	
+                    
+                    <div class="position">{{currentUser$.role}}</div>
+                </figure>
+            </div>
+        </div>
+    </div>
 </nav>
