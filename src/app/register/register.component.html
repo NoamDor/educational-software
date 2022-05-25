@@ -6,7 +6,7 @@
         <hr>
         
         <label for="firstName" style="float: right;"><b>שם פרטי</b></label>
-        <input type="text" placeholder="הזן שם פרטי" name="firstName" id="firstName" required [(ngModel)]="firstName" #firstNameEl (input)="isFirstName()">
+        <input type="text" placeholder="הזן שם פרטי" name="firstName" id="firstName" required [(ngModel)]="firstName" #firstNameEl (input)="isFirstNameValid()">
         <div style="float: right; color: red;" *ngIf="!firstNameValid">
           עלייך להזין שם פרטי
         </div><br><br><br>
@@ -20,7 +20,7 @@
 
 
         <label for="email" style="float: right;"><b>כתובת מייל</b></label>
-        <input type="email" placeholder="הזן כתובת מייל" name="email" id="email" required [(ngModel)]="email" #emailEl (input)="isEmailName()">
+        <input type="email" placeholder="הזן כתובת מייל" name="email" id="email" required [(ngModel)]="email" #emailEl (input)="isEmailValid()">
         <div style="float: right; color: red;" *ngIf="!emailValid">
           עלייך להזין כתובת מייל
         </div><br><br><br>
