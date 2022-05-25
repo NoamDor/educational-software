@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class TrainingComponent implements OnInit {
 
-  title = 'אנגולר- כלים לפיתוח נכון';
+  title = 'יחידת לימוד לדוגמא - מתן משוב ';
   state = [{
     name: 'training-start',
-    nextButton: 'התחל לומדה'
+    nextButton: 'התחל יחידה'
   },{
     name: 'training-theory',
     nextButton: 'הבא'
@@ -32,10 +32,10 @@ export class TrainingComponent implements OnInit {
   },
   {
     name: 'training-open-question',
-    nextButton: 'סיים לומדה'
+    nextButton: 'סיימי יחידה'
   },{
     name: 'training-end',
-    nextButton: 'שלח דירוג'
+    nextButton: 'שלחי דירוג'
   }]
 
   stateIndex = 0;

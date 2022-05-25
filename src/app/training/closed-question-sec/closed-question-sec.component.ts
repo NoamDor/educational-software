@@ -48,10 +48,10 @@ export class ClosedQuestionSecComponent implements OnInit {
     this.tester.nativeElement.style.display='none'
     this.explanation.nativeElement.style.display = 'block'
     this.explanation.nativeElement.style['margin-top'] = '100px'
-    if(this.currentAns == 3){
-      this.exp = 'צדקת! איזה אלוף בלה בלה בלה'
+    if(this.currentAns == 4){
+      this.exp = 'נכון מאוד! בהמשך היחידה נלמד מהם הדגשים לשיחת משוב נכונה, כל הכבוד :)'
     } else{
-      this.exp = 'טיפש!! תתקדם'
+      this.exp = 'נכון... אך התשובה המדויקת יותר היא שכל אותם גורמים הפכו את השיחה השניה לפחות טובה, מהם הדגשים לשיחת משוב נכונה'
     }
   }
 

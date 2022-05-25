@@ -119,6 +119,8 @@ padding-right: 5%;
 
 .phonenav a:hover {
   background-color: #c8d8e4;
+  border-color: black;
+  border-width: 1cm;
 }
 
 }
@@ -143,6 +145,8 @@ figure.snip0045 {
   width: 100%;
   background: #ffffff;
   color: #000000;
+  border-color: black;
+  border-width: 1cm;
 }
 figure.snip0045 * {
   -webkit-box-sizing: border-box;
@@ -204,25 +208,25 @@ figure.snip0045 figcaption a:hover {
 }
 figure.snip0045 .position {
   width: 100%;
-  text-align: right;
+  text-align: center;
   padding: 15px 30px;
-  font-size: 0.9em;
+  font-size: 2em;
   opacity: 1;
   font-style: italic;
-  color: #ffffff;
+  color: #0f0e0e;
   background: #000000;
 }
 figure.snip0045.blue .position {
-  background: #20638f;
+  background: #6d929b;
 }
 figure.snip0045.red .position {
-  background: #962d22;
+  background: #6d929b;
 }
 figure.snip0045.yellow .position {
-  background: #bf6516;
+  background: #6d929b;
 }
 figure.snip0045.green .position {
-  background: #1e8449;
+  background: #6d929b;
 }
 figure.snip0045:hover > img,
 figure.snip0045.hover > img {

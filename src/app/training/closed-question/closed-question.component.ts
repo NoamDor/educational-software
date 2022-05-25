@@ -10,7 +10,6 @@ export class ClosedQuestionComponent implements OnInit {
   @ViewChild('1') check1: ElementRef;
   @ViewChild('2') check2: ElementRef;
   @ViewChild('3') check3: ElementRef;
-  @ViewChild('4') check4: ElementRef;
   @ViewChild('tester') tester: ElementRef;
   @ViewChild('explanationn') explanationn: ElementRef;
   exp = '';
@@ -23,7 +22,6 @@ export class ClosedQuestionComponent implements OnInit {
     this.check1.nativeElement['checked']=false;
     this.check2.nativeElement['checked']=false;
     this.check3.nativeElement['checked']=false;
-    this.check4.nativeElement['checked']=false;
     switch(e){
       case 1:
         this.check1.nativeElement['checked']=true;
@@ -33,9 +31,6 @@ export class ClosedQuestionComponent implements OnInit {
         break;
       case 3:
         this.check3.nativeElement['checked']=true;
-        break;
-      case 4:
-        this.check4.nativeElement['checked']=true;
         break;
     }
   }
@@ -48,9 +43,9 @@ export class ClosedQuestionComponent implements OnInit {
     this.explanationn.nativeElement.style.display = 'block'
     this.explanationn.nativeElement.style['margin-top'] = '100px'
     if(this.currentAns == 2){
-      this.exp = 'צדקת! איזה אלוף בלה בלה בלה'
+      this.exp = 'צדקת! השיחה הראשונה אכן הייתה יותר טובה מבין השתיים'
     } else{
-      this.exp = 'טיפש!! תתקדם'
+      this.exp = 'תשובה לא נכונה, השיחה השניה הייתה טובה יותר מבין השתיים, אבל אל דאגה, בהמשך הלומדה תלמדי מדוע :)'
     }
   }
 
