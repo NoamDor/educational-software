@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/services/user.service';
 
@@ -10,11 +10,11 @@ import { UserService } from 'src/services/user.service';
 export class HomePageComponent implements OnInit {
 
   slideIndex = 1;
-  currentUser$:any;
+  currentUser:any;
 
   constructor(private userService: UserService,private router: Router) { 
     this.userService.getUser().subscribe(user=> {
-      this.currentUser$ = user
+      this.currentUser = user
     })
   }
 
@@ -38,8 +38,7 @@ export class HomePageComponent implements OnInit {
   }
 
   startTraining(){
-    console.log(this.currentUser$)
-    if(this.currentUser$){
+    if(this.userService.userValue){
       this.router.navigateByUrl('/training')
     } else{
       this.router.navigateByUrl('/register')
